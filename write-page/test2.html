@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details</title>
+    <style>
+        .container {
+            display: flex;
+        }
+        .left, .right {
+            flex: 1;
+            padding: 10px;
+        }
+        .left img {
+            width: 100%;
+            height: auto;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .grid img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <button id="loadDataButton">Load Car Details</button>
+    <main style="display: none;" id="carDetails">
+        <h2 id="brand-model"></h2>
+        <h2 id="car-price"></h2>
+        <section class="container">
+            <div class="left">
+                <img id="mainImage" src="http://via.placeholder.com/640x480" alt="Main Image">
+            </div>
+            <div class="right">
+                <div class="grid" id="imageGrid">
+                    <!-- 이미지 그리드가 여기에 추가됩니다 -->
+                </div>
+            </div>
+        </section>
+        <table>
+            <tr>
+                <th>연식</th>
+                <td id="modelYear"></td>
+                <th>색상</th>
+                <td id="color"></td>
+            </tr>
+            <tr>
+                <th>배기량</th>
+                <td id="displacement"></td>
+                <th>뭐뭐뭐뭐</th>
+                <td id="extraInfo"></td>
+            </tr>
+        </table>
+        <section>
+            <h3>판매자 정보</h3>
+            <p>이름: <span id="userName"></span></p>
+            <p>전번: <span id="phoneNumber"></span></p>
+        </section>
+    </main>
+    <footer>
+        <p>푸터입니다</p>
+    </footer>
+
+    <script>
+        document.getElementById('loadDataButton').addEventListener('click', function() {
+            fetch('http://192.168.0.25:8080/car/details')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('brand-model').textContent = `${data.brand} ${data.name}`;
+                    document.getElementById('car-price').textContent = `판매가 ${data.price}만원`;
+                    document.getElementById('modelYear').textContent = data.modelYear;
+                    document.getElementById('color').textContent = data.color;
+                    document.getElementById('displacement').textContent = data.displacement;
+                    document.getElementById('extraInfo').textContent = data.extraInfo || 'N/A';
+                    document.getElementById('userName').textContent = data.userName;
+                    document.getElementById('phoneNumber').textContent = data.phoneNumber;
+
+                    const grid = document.getElementById('imageGrid');
+                    if (data.images.length > 0) {
+                        document.getElementById('mainImage').src = data.images[0].src || 'http://via.placeholder.com/640x480';
+                    }
+                    data.images.forEach(image => {
+                        const imgElement = document.createElement('img');
+                        imgElement.src = image.src || 'http://via.placeholder.com/640x480';
+                        imgElement.alt = image.alt || 'Placeholder Image';
+                        imgElement.addEventListener('click', function() {
+                            document.getElementById('mainImage').src = imgElement.src;
+                        });
+                        grid.appendChild(imgElement);
+                    });
+
+                    document.getElementById('carDetails').style.display = 'block';
+                })
+                .catch(error => {
+                    console.error('Error fetching car details:', error);
+                });
+        });
+    </script>
+</body>
+</html>

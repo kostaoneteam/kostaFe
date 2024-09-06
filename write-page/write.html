@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="./server.js"></script>
+    <!-- <script src="./server.js"></script> -->
     <!-- <script src="./script.js"></script> -->
     <link rel="stylesheet" href="./style.css">
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
@@ -56,64 +56,64 @@
 
 <!-- 브랜드(옵션), 모델명(인풋), 배기량(옵션), 색상(인풋), 이미지(?) -->
 <!------------ SECTION START ------------>
-<form id="carForm" action="/submit" method="POST">
-  <label for="carModel">제조사:</label>
-  <select name="carModel" id="carModel">
-      <option value="현대">현대</option>
-      <option value="기아">기아</option>
-      <option value="제네시스">제네시스</option>
-      <option value="쉐보레">쉐보레(GM대우)</option>
-      <option value="르노코리아">르노코리아(삼성)</option>
-      <option value="KG모빌리티">KG모빌리티(쌍용)</option>
-  </select>
-  <br>
-  <label for="carType">차량 종류:</label>
-  <select name="carType" id="carType">
-      <option value="경차">경차</option>
-      <option value="소형차">소형차</option>
-      <option value="중형차">중형차</option>
-      <option value="대형차">대형차</option>
-      <option value="스포츠카">스포츠카</option>
-      <option value="SUV">SUV</option>
-  </select>
-  <br>
-  <label for="displacement">배기량:</label>
-  <select name="displacement" id="displacement">
-      <option value="1000cc 미만">경차 1000cc 미만</option>
-      <option value="1600cc 미만">소형차 1600cc 미만</option>
-      <option value="1600cc ~2000cc 미만">중형차 1600cc ~2000cc 미만</option>
-      <option value="2000cc 이상">대형차 2000cc 이상</option>
-  </select>
-  <br>
-  <label for="color">색상:</label>
-  <select name="color" id="color">
-      <option value="흰색">흰색</option>
-      <option value="검정색">검정색</option>
-      <option value="쥐색">쥐색</option>
-      <option value="은색">은색</option>
-      <option value="청색">청색</option>
-  </select>
-  <br>
-  <label for="carYear">차량 연식:</label>
-  <select name="carYear" id="carYear">
-      <option value="2000년~2005년">2000년~2005년</option>
-      <option value="2005년~2010년">2005년~2010년</option>
-      <option value="2011년~2015년">2011년~2015년</option>
-      <option value="2016년~2020년">2016년~2020년</option>
-      <option value="2021년">2021년</option>
-      <option value="2022년">2022년</option>
-      <option value="2023년">2023년</option>
-      <option value="2024년">2024년</option>
-  </select>
-  <br>
-  <label for="price">가격:</label>
-  <input type="number" name="price" id="price">
-  <br>
-  <label for="comment">코멘트:</label>
-  <textarea name="comment" id="comment"></textarea>
-  <br>
-  <button type="submit">등록</button>
-</form>
+    <form id="carForm">
+        <label for="carModel">제조사:</label>
+        <select id="carModel">
+            <option value="현대">현대</option>
+            <option value="기아">기아</option>
+            <option value="제네시스">제네시스</option>
+            <option value="쉐보레">쉐보레(GM대우)</option>
+            <option value="르노코리아">르노코리아(삼성)</option>
+            <option value="KG모빌리티">KG모빌리티(쌍용)</option>
+        </select><br>
+
+        <label for="carType">차량 종류:</label>
+        <select id="carType">
+            <option value="경차">경차</option>
+            <option value="소형차">소형차</option>
+            <option value="중형차">중형차</option>
+            <option value="대형차">대형차</option>
+            <option value="스포츠카">스포츠카</option>
+            <option value="SUV">SUV</option>
+        </select><br>
+
+        <label for="displacement">배기량:</label>
+        <select id="displacement">
+            <option value="1000cc 미만">경차 1000cc 미만</option>
+            <option value="1600cc 미만">소형차 1600cc 미만</option>
+            <option value="1600cc ~2000cc 미만">중형차 1600cc ~2000cc 미만</option>
+            <option value="2000cc 이상">대형차 2000cc 이상</option>
+        </select><br>
+
+        <label for="color">색상:</label>
+        <select id="color">
+            <option value="흰색">흰색</option>
+            <option value="검정색">검정색</option>
+            <option value="쥐색">쥐색</option>
+            <option value="은색">은색</option>
+            <option value="청색">청색</option>
+        </select><br>
+
+        <label for="carYear">차량 연식:</label>
+        <select id="carYear">
+            <option value="2000년~2005년">2000년~2005년</option>
+            <option value="2005년~2010년">2005년~2010년</option>
+            <option value="2011년~2015년">2011년~2015년</option>
+            <option value="2016년~2020년">2016년~2020년</option>
+            <option value="2021년">2021년</option>
+            <option value="2022년">2022년</option>
+            <option value="2023년">2023년</option>
+            <option value="2024년">2024년</option>
+        </select><br>
+
+        <label for="price">가격:</label>
+        <input type="number" id="price"><br>
+
+        <label for="comment">코멘트:</label>
+        <textarea id="comment"></textarea><br>
+
+        <button type="submit">등록</button>
+    </form>
 <!------------ SECTION END ------------>
 <!-- footer -->
 
@@ -124,39 +124,44 @@
 </body>
 
 <script>
-  document.querySelector('#carForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // 기본 폼 제출 방지
+    document.querySelector('#carForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // 기본 폼 제출 방지
 
-      const data = {
-          carModel: document.querySelector('#carModel').value,
-          carType: document.querySelector('#carType').value,
-          displacement: document.querySelector('#displacement').value,
-          color: document.querySelector('#color').value,
-          carYear: document.querySelector('#carYear').value,
-          price: parseInt(document.querySelector('#price').value),
-          comment: document.querySelector('#comment').value
-      };
+        const data = {
+            carModel: document.querySelector('#carModel').value,
+            carType: document.querySelector('#carType').value,
+            displacement: document.querySelector('#displacement').value,
+            color: document.querySelector('#color').value,
+            carYear: document.querySelector('#carYear').value,
+            price: parseInt(document.querySelector('#price').value),
+            comment: document.querySelector('#comment').value
+        };
 
-      console.log('Form Data:', data); // 폼 데이터 확인
-      console.log('JSON Data:', JSON.stringify(data)); // JSON 변환 확인
+        console.log('Form Data:', data); // 폼 데이터 확인
+        console.log('JSON Data:', JSON.stringify(data)); // JSON 변환 확인
 
-      fetch('http://192.168.0.25:8080/carpost/post', {
-          method: 'POST', // POST 요청으로 설정
-          headers: {
-              'Content-Type': 'application/json',
-              'Accept': '*/*'
-          },
-          body: JSON.stringify(data)
-      })
-      .then(response => response.json())
-      .then(data => {
-          alert('작성 완료!');
-          console.log('Success:', data);
-      })
-      .catch(error => {
-          console.error('Error:', error);
-      });
-  });
+        fetch('http://192.168.0.25:8080/carpost/post', {
+            method: 'POST', // POST 요청으로 설정
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': '*/*'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert('작성 완료!');
+            console.log('Success:', data);
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    });
 </script>
 
 </html>
