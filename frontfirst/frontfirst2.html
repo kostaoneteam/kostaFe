@@ -12,17 +12,10 @@
     <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"> -->
     <script src="https://kit.fontawesome.com/def66b134a.js" crossorigin="anonymous"></script>
     <script src="./mainPageLikeIcon.js"></script>
+    <script src="./aside_selectevent.js"></script>
     
-    <!-- 확인용 스크립트 지우거나 js 파일로 옮겨주기 -->
-    <!-- <script>
 
-     function clearTextarea() {
-        document.getElementById('input-search').value = '';
-      }
-    </script>
-     -->
-
-
+   
 
     <title>Document</title>
 </head>
@@ -59,165 +52,167 @@
 <div class="main-menu">
 
     <!-- aside -->
-
+<div class="aside_section">
     <aside class="">
         <div class="accordion">
             <input type="checkbox" id="car_select01">
-            <label for="car_select01">제 조 사<img src="./arrow down.png"></img></label>
+            <label for="car_select01">제 조 사<i class="fa-solid fa-arrow-down"></i></label>
+            <!-- <label for="car_select01">제 조 사<img src="./arrow down.png"></img></label> -->
+
             <div class="sidebar"  >
                 <div class="brand" >
                     <ul class="accordion_ul">
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-brand="1">
-                            <label for="select01" class="accordion_bar" >현대</label>
+                            <input type="checkbox" for="selectevent01" class="input_selectevent" id="select_Br01" data-car-brand="1">
+                            <label for="select_Br01" id="selectevent01" class="accordion_bar"><p>현대</p></label>
                         </li>  
                         <li>
-                            <input type="checkbox" class="" id="select02" data-car-brand="2">
-                            <label for="select02" class="accordion_bar"" >기아</label>
+                            <input type="checkbox" class="" id="select_Br02" data-car-brand="2">
+                            <label for="select_Br02" class="accordion_bar" ><p>기아</p></label>
                         </li> 
                         <li>
-                            <input type="checkbox" class="" id="select03" data-car-brand="3">
-                            <label for="select03" class="accordion_bar" >제네시스</label>
+                            <input type="checkbox" class="" id="select_Br03" data-car-brand="3">
+                            <label for="select_Br03" class="accordion_bar" ><p>제네시스</p></label>
                         </li> 
                         <li>
-                            <input type="checkbox" class="" id="select04" data-car-brand="4">
-                            <label for="select04" class="accordion_bar" >쉐보레(GM대우)</label>
+                            <input type="checkbox" class="" id="select_Br04" data-car-brand="4">
+                            <label for="select_Br04" class="accordion_bar" ><P>쉐보레(GM대우)</P></label>
                         </li> 
                         <li>
-                            <input type="checkbox" class="" id="select05" data-car-brand="5">
-                            <label for="select05" class="accordion_bar" >르노코리아(삼성)</label>
+                            <input type="checkbox" class="" id="select_Br05" data-car-brand="5">
+                            <label for="select_Br05" class="accordion_bar" ><P>르노코리아(삼성)</P></label>
                         </li> 
                         <li>
-                            <input type="checkbox" class="" id="select06" data-car-brand="6">
-                            <label for="select06" class="accordion_bar" >KG모빌리티(쌍용)</label>
+                            <input type="checkbox" class="" id="select_Br06" data-car-brand="6">
+                            <label for="select_Br06" class="accordion_bar" ><P>KG모빌리티(쌍용)</P></label>
                         </li> 
                     </ul>
                 </div>
             </div>
 
             <input type="checkbox" id="car_select02">
-            <label for="car_select02">차 량 종 류<img src="./arrow down.png"></img></label>
+            <label for="car_select02">차 량 종 류<i class="fa-solid fa-arrow-down"></i></label>
             <div class="sidebar" >
                 <div class="carTypeld" >
                     <ul class="accordion_ul">
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-Typeld="1">
-                            <label for="select01" class="accordion_bar" >경차</label>
+                            <input type="checkbox" class="" id="select_CT01" data-car-Typeld="1">
+                            <label for="select_CT01" class="accordion_bar" ><P>경차</P></label>
                         </li>  
                         <li>
-                            <input type="checkbox" class="" id="select02" data-car-Typeld="2">
-                            <label for="select02" class="accordion_bar" >소형차</label>
+                            <input type="checkbox" class="" id="select_CT02" data-car-Typeld="2">
+                            <label for="select_CT02" class="accordion_bar" ><P>소형차</P></label>
                         </li> 
                         <li>
-                            <input type="checkbox" class="" id="select03" data-car-Typeld="3">
-                            <label for="select03" class="accordion_bar" >중형차</label>
+                            <input type="checkbox" class="" id="select_CT03" data-car-Typeld="3">
+                            <label for="select_CT03" class="accordion_bar" ><P>중형차</P></label>
                         </li> 
                         <li>
-                            <input type="checkbox" class="" id="select04" data-car-Typeld="4">
-                            <label for="select04" class="accordion_bar" >대형차</label>
+                            <input type="checkbox" class="" id="select_CT04" data-car-Typeld="4">
+                            <label for="select_CT04" class="accordion_bar" ><P>대형차</P></label>
                         </li> 
                         <li>
-                            <input type="checkbox" class="" id="select05" data-car-Typeld="5">
-                            <label for="select05" class="accordion_bar" >스포츠카</label>
+                            <input type="checkbox" class="" id="select_CT05" data-car-Typeld="5">
+                            <label for="select_CT05" class="accordion_bar" ><P>스포츠카</P></label>
                         </li> 
                         <li>
-                            <input type="checkbox" class="" id="select06" data-car-Typeld="6">
-                            <label for="select06" class="accordion_bar" >SUV</label>
+                            <input type="checkbox" class="" id="select_CT06" data-car-Typeld="6">
+                            <label for="select_CT06" class="accordion_bar" ><P>SUV</P></label>
                         </li> 
                     </ul>
                 </div>
             </div>
 
             <input type="checkbox" id="car_select03">
-            <label for="car_select03">배 기 량<img src="./arrow down.png"></img></label>
+            <label for="car_select03">배 기 량<i class="fa-solid fa-arrow-down"></i></label>
             <div class="sidebar" >
                 <div class="displacement" >
                     <ul class="accordion_ul">
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-displacement="1">
-                            <label for="select01" class="accordion_bar" >경차 1000cc 미만</label>
+                            <input type="checkbox" class="" id="select_dp01" data-car-displacement="1">
+                            <label for="select_dp01" class="accordion_bar" ><P>경차 1000cc 미만</P></label>
                         </li>              
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-displacement="1">
-                            <label for="select01" class="accordion_bar" >소형차 1600cc 미만</label>
+                            <input type="checkbox" class="" id="select_dp02" data-car-displacement="2">
+                            <label for="select_dp02" class="accordion_bar" ><P>소형차 1600cc 미만</P></label>
                         </li>                
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-displacement="1">
-                            <label for="select01" class="accordion_bar" >중형차 1600cc ~2000 미만</label>
+                            <input type="checkbox" class="" id="select_dp03" data-car-displacement="3">
+                            <label for="select_dp03" class="accordion_bar" ><P>중형차 1600cc ~2000 미만</P></label>
                         </li>               
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-displacement="1">
-                            <label for="select01" class="accordion_bar" >대형 2000cc 이상</label>
+                            <input type="checkbox" class="" id="select_dp04" data-car-displacement="4">
+                            <label for="select_dp04" class="accordion_bar" ><P>대형 2000cc 이상</P></label>
                         </li>  
                     </ul>
                 </div>
             </div>
 
             <input type="checkbox" id="car_select04">
-            <label for="car_select04">색 상<img src="./arrow down.png"></img></label>
+            <label for="car_select04">색 상<i class="fa-solid fa-arrow-down"></i></label>
             <div class="sidebar" >
                 <div class="color" >
                     <ul class="accordion_ul">
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-color="1">
-                            <label for="select01" class="accordion_bar" > 흰색</label>
+                            <input type="checkbox" class="" id="select_cl01" data-car-color="1">
+                            <label for="select_cl01" class="accordion_bar" ><P>흰색</P> </label>
                         </li>  
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-color="1">
-                            <label for="select01" class="accordion_bar" > 검정색</label>
+                            <input type="checkbox" class="" id="select_cl02" data-car-color="2">
+                            <label for="select_cl02" class="accordion_bar" ><P>검정색</P> </label>
                         </li>  
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-color="1">
-                            <label for="select01" class="accordion_bar" > 쥐색</label>
+                            <input type="checkbox" class="" id="select_cl03" data-car-color="3">
+                            <label for="select_cl03" class="accordion_bar" > <P>쥐색</P></label>
                         </li>  
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-color="1">
-                            <label for="select01" class="accordion_bar" > 은색</label>
+                            <input type="checkbox" class="" id="select_cl04" data-car-color="4">
+                            <label for="select_cl04" class="accordion_bar" > <P>은색</P></label>
                         </li>  
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-color="1">
-                            <label for="select01" class="accordion_bar" > 청색</label>
+                            <input type="checkbox" class="" id="select_cl05" data-car-color="5">
+                            <label for="select_cl05" class="accordion_bar" > <P>청색</P></label>
                         </li>  
                     </ul>
                 </div>
             </div>
 
             <input type="checkbox" id="car_select05">
-            <label for="car_select05">차 량 연 식<img src="./arrow down.png"></img></label>
+            <label for="car_select05">차 량 연 식<i class="fa-solid fa-arrow-down"></i></label>
             <div class="sidebar" >
                 <div class="modelYear" >
                     <ul class="accordion_ul">
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-modelYear="1">
-                            <label for="select01" class="accordion_bar" >2000년~2005년</label>
+                            <input type="checkbox" class="" id="select_my01" data-car-modelYear="1">
+                            <label for="select_my01" class="accordion_bar" ><P>2000년~2005년</P></label>
                         </li>  
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-modelYear="1">
-                            <label for="select01" class="accordion_bar" >2005년~2010년</label>
+                            <input type="checkbox" class="" id="select_my02" data-car-modelYear="2">
+                            <label for="select_my02" class="accordion_bar" ><P>2005년~2010년</P></label>
                         </li>  
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-modelYear="1">
-                            <label for="select01" class="accordion_bar" >2011년~2015년</label>
+                            <input type="checkbox" class="" id="select_my03" data-car-modelYear="3">
+                            <label for="select_my03" class="accordion_bar" ><P>2011년~2015년</P></label>
                         </li>  
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-modelYear="1">
-                            <label for="select01" class="accordion_bar" >2016년~2020년</label>
+                            <input type="checkbox" class="" id="select_my04" data-car-modelYear="4">
+                            <label for="select_my04" class="accordion_bar" ><P>2016년~2020년</P></label>
                         </li>  
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-modelYear="1">
-                            <label for="select01" class="accordion_bar" >2021년</label>
+                            <input type="checkbox" class="" id="select_my05" data-car-modelYear="5">
+                            <label for="select_my05" class="accordion_bar" ><P>2021년</P></label>
                         </li>  
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-modelYear="1">
-                            <label for="select01" class="accordion_bar" >2022년</label>
+                            <input type="checkbox" class="" id="select_my06" data-car-modelYear="6">
+                            <label for="select_my06" class="accordion_bar" ><P>2022년</P></label>
                         </li>  
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-modelYear="1">
-                            <label for="select01" class="accordion_bar" >2023년</label>
+                            <input type="checkbox" class="" id="select_my07" data-car-modelYear="7">
+                            <label for="select_my07" class="accordion_bar" ><P>2023년</P></label>
                         </li>  
                         <li >
-                            <input type="checkbox" class="" id="select01" data-car-modelYear="1">
-                            <label for="select01" class="accordion_bar" >2024년</label>
+                            <input type="checkbox" class="" id="select_my08" data-car-modelYear="8">
+                            <label for="select_my08" class="accordion_bar" ><P>2024년</P></label>
                         </li>  
                     </ul>
                 </div>
@@ -275,8 +270,1001 @@
 
                 </div>
             </div>
-            
 
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+            <div class="car-icons">
+                <div class="car-holder">
+                    <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
+                </div>
+                <div class="text">
+                    <div class="car1"> 아이오닉 5 EV AWD</div>
+                    <table class="car_table">
+                        <tbody>
+                            <tr>
+                                <td>차 종 : </td>
+                                <td><span> suv</span></td>
+                            </tr>
+                            <tr>
+                                <td>연 식 : </td>
+                                <td><span> 2010/01</span></td>
+                            </tr>
+                            <tr>
+                                <td> 가 격 : </td>
+                                <td><span> 2750만원</span></td>
+                            </tr>
+                            <tr>
+                                <td>총 km 수 : </td>
+                                <td> <span>82200km</span></td>
+                            </tr>
+                            <tr>
+                                <td>배 기 량 : </td>
+                                <td><span> 1580cc</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="icon-footer">
+                    <div>판매자 : <span> 누구게</span></div>
+                    <!-- <div class="like" ><i class="fa-solid fa-heart">&nbsp;0</i></div> -->
+                    <div class="like" data-like-count="0"><i class="fa-solid fa-heart"></i> 0</div>
+                    <!-- <button class="like"><i class="fa-solid fa-heart"></i><span class="like-count">&nbsp;&nbsp;0</span></button> -->
+        
+                </div>
+            </div>
+        
+      
+       
           
             
         
@@ -285,14 +1273,14 @@
        
     
     </section>
-
+</div>
 </div>
 <!-- footer -->
 
-<footer class="footer">
+<!-- <footer class="footer">
     <p>푸터입니다</p>
  
-</footer>
+</footer> -->
 </div>  
 
 

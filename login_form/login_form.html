@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login_form.css">
+    <script src="./login_form.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="login-main">
+        <form name="textForm" class="textForm" id="textForm" method="post">
+          <div>
+            <h2>로 그 인</h2>
+            <p style="font-size: 14px">사이트를 이용하시려면 로그인 해주세요</p>
+          </div>
+        <div class="login-id">   
+          <label for="useridinput" id="useridlabel">아이디</l abel>
+          <input type="text" name="userid" id="useridinput" maxlength="15" ><br>
+          <p class="err-msg" id="userid-error-msg">아이디를 입력해주세요.</p>
+        </div>
+
+        <div class="login-pw">
+          <label for="passwordinput"id="passwordlabel">패스워드</label>
+          <input type="password" name="password" id="passwordinput" maxlength="15"><br>
+          <p class="err-msg" id="password-error-msg">비밀번호를 입력해주세요</p>
+         </div>
+
+        <div class="login-btn">
+          <button type="submit" name="btn_text" id="btn_text" >로그인</button>
+          
+        </div>
+      </form>
+    </div>
+</body>
+</html>

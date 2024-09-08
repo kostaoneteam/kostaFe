@@ -16,8 +16,19 @@
 //     document.getElementById('membership_email').value ='';
 // }
 
+// 이건 엔터키인데 어떻게 실행 시킬까
+// $(document).ready(function () {
+//     $('input').on('keypress', function (event) {
+//         if (event.keyCode === 13) {
+//             event.preventDefault();
+//             $(this).next('input').focus();
+//         }
+//     });
+// });
+
+
 // 입력여부 확인
-const join = () => {
+ join = () => {
     // 각 입력값 변수설정
     let userIdInput = document.querySelector('#membership_id');
     let passwordInput = document.querySelector('#membership_pw');
@@ -28,13 +39,9 @@ const join = () => {
     
     let check = true;
 
-    // console.log(userIdInput.value)
-    // console.log(passwordInput.value)
-    // console.log(userNameInput.value)
-    // console.log(userEmailInput.value)
     let userIdErrorMsg = document.querySelector('#userid-error-msg');
-
-    if(userIdInput.value === ''){
+    
+    if(userIdInput.value === '' ){
         userIdErrorMsg.style.display ='block';
         document.form_membership.membership_id.focus();
         check = false;
@@ -66,8 +73,10 @@ const join = () => {
 
 
     let userNameErrorMsg = document.querySelector('#name-error-msg')
+    const name = $('#membership_name').val();
+    const nameRegex = /^[가-힣]+$/;
 
-    if (userNameInput.value === '') {
+    if (userNameInput.value === '' || !nameRegex.test(name) ) {
         userNameErrorMsg.style.display = 'block';
         document.form_membership.membership_name.focus();
 
@@ -77,8 +86,9 @@ const join = () => {
     }
 
     let emailErrorMsg= document.querySelector('#email-error-msg')
-
-    if (userEmailInput.value === ''){
+    const email = $('#membership_email').val();
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/g;
+    if (userEmailInput.value === '' || !emailRegex.test(email)){
         emailErrorMsg.style.display = 'block';
         document.form_membership.membership_email.focus();
 
@@ -100,9 +110,10 @@ const join = () => {
     if(check){
         alert('회원가입이 완료 되었습니다.');
     }
+    // document.form_membership.action = '/.jsp';
+    // document.form_membership.submit() 
 }
 
 
 // 아이디형식 지정해주기
 // 비밀번호 형식 지정해주기
-// 이메일 형식  지정해주기
