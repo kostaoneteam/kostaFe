@@ -178,16 +178,19 @@ section{
     width: 116px;
 }
 table{
-    width: 60%;
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px; /* 셀 내부 여백 설정 */
+    text-align: center; /* 텍스트 중앙 정렬 */
 }
 input.input-title[type="text"], textarea {
     border: 1.5px solid rgb(68, 136, 244);
-    width: 300px;
+    width: 100px;
     border-radius: 5px;
-    padding: 10px;
-    margin-right: 15px;
 }
-textarea { height: 400px; resize: none; }
+textarea { height: 28px; resize: none; }
 input.submit-button[type="submit"] {
     width: 100px;
     height: 40px;                              
