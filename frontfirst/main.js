@@ -1,9 +1,16 @@
 let offset = 0;
-const limit = 10; // 한 번에 가져올 데이터의 개수
+const limit = 30; // 한 번에 가져올 데이터의 개수
 const section = document.getElementById('main-section');
 let isLoading = false; // 데이터 로딩 중인지 확인하는 플래그
 let lastScrollTop = window.scrollY || document.documentElement.scrollTop; // 초기값 설정
 const scrollThreshold = 50; // 스크롤 감지를 위한 임계값 (픽셀 단위)
+let isFilterActive = false; // 필터 활성화 여부
+
+// 체크박스 상태 확인 함수
+const updateFilterState = () => {
+    // 체크박스 상태를 확인하고 isFilterActive를 업데이트합니다.
+    isFilterActive = document.querySelectorAll('input[type="checkbox"]:checked').length > 0;
+};
 
 // 페이지 로드 시 auth.js 로드
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,7 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('auth.js를 로드하는 중 오류 발생:', error);
         });
 
+    updateFilterState(); // 초기 필터 상태 업데이트
     loadData(); // 페이지 로드 시 데이터 로딩
+});
+
+// 체크박스 변경 시 필터 상태 업데이트
+document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+        updateFilterState();
+        offset = 0; // 오프셋 초기화
+        section.innerHTML = ''; // 현재 표시된 데이터 지우기
+        loadData(); // 필터 적용 후 데이터 로딩
+    });
 });
 
 window.addEventListener('scroll', () => {
@@ -26,9 +44,9 @@ window.addEventListener('scroll', () => {
         // 아래로 스크롤하는 경우만 체크
         if (currentScrollTop > lastScrollTop) {
             // 페이지 맨 아래에 도달했는지 확인
-            if (window.innerHeight + currentScrollTop >= document.documentElement.scrollHeight ) {
-                // 데이터 로딩 중인지 확인하고, 로딩 중이지 않은 경우만 loadData 호출
-                if (!isLoading) {
+            if (window.innerHeight + currentScrollTop >= document.documentElement.scrollHeight) {
+                // 필터가 활성화된 경우만 데이터 로딩
+                if (isFilterActive && !isLoading) {
                     isLoading = true; // 로딩 시작
                     loadData().then(() => {
                         isLoading = false; // 로딩 완료
@@ -44,7 +62,11 @@ window.addEventListener('scroll', () => {
 
 // 데이터 로딩 함수
 const loadData = () => {
-    return fetch(`http://localhost:8080/carpost/main?limit=${limit}&offset=${offset}`)
+    const baseURL = isFilterActive
+        ? `http://localhost:8080/carpost/filter?limit=${limit}&offset=${offset}`
+        : `http://localhost:8080/carpost/main?limit=${limit}&offset=${offset}`;
+
+    return fetch(baseURL)
         .then(response => response.json())
         .then(data => {
             // 데이터를 페이지에 추가

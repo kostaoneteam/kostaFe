@@ -136,7 +136,7 @@ if(check){
   formData.append('userState', userState.value);
 
   // 백엔드로 POST 요청 보내기
-  fetch('http://192.168.0.25:8080/user/signup', {
+  fetch('http://localhost:8080/user/signup', {
     method: 'POST',
     body: formData
   })

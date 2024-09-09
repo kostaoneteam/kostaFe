@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append('profileImage', selectedFile); 
             formData.append('userState', userState.value);
 
-            fetch('http://192.168.0.25:8080/user/signup', {
+            fetch('http://localhost:8080/user/signup', {
                 method: 'POST',
                 body: formData,
                 console.log(formData)

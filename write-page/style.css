@@ -119,7 +119,7 @@ input.input-title[type="text"], textarea {
     border-radius: 5px;
     padding: 10px;
 }
-textarea { height: 400px; resize: none; }
+textarea { height: 200px; resize: none; }
 input.submit-button[type="submit"] {
     width: 100px;
     height: 40px;                              

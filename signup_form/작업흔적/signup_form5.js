@@ -145,7 +145,7 @@ if(check){
  
 
 
-  fetch('http://192.168.0.25:8080/user/signup', {
+  fetch('http://localhost:8080/user/signup', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json', // JSON 데이터 전송을 명시

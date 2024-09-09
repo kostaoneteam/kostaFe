@@ -146,7 +146,7 @@ let imageMsg = document.querySelector('profileImageError')
             , userState: userState
         }
         console.log(params)
-        fetch("http://192.168.0.25:8080/user/signup", {
+        fetch("http://localhost:8080/user/signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
