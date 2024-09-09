@@ -171,6 +171,9 @@ section{
     padding-top: 3%;
     padding-bottom: 4%;
 }
+#carForm{
+    padding: 10%;
+}
 .container.mt-3 {
     align-items: center;
 }
@@ -180,6 +183,7 @@ section{
 table{
     width: 100%;
     border-collapse: collapse;
+    padding: 10px;
 }
 th, td {
     padding: 8px; /* 셀 내부 여백 설정 */
@@ -202,6 +206,9 @@ input.submit-button[type="submit"] {
 input[type="submit"]:active {
     background-color: rgb(68, 136, 244);
 }
+/* .carImgUp{
+    text-align: left;
+} */
 
 /* ================================================================================================== */
 .footer{

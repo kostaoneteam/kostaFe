@@ -67,14 +67,14 @@
             </colgroup>
             <tbody>
                 <tr>
-                    <th><label for="comment">코멘트 :</label></th>
+                    <th><label for="carModel">차량이름 :</label></th>
                     <th colspan="2"><textarea id="comment"></textarea><br></th>
                     <th></th>
                 </tr>
                 <tr>
-                    <th><label for="carModel">제조사:</label></th>
+                    <th><label for="brand">제조사:</label></th>
                     <td>
-                        <select id="carModel">
+                        <select id="brand">
                             <option value="현대">현대</option>
                             <option value="기아">기아</option>
                             <option value="제네시스">제네시스</option>
@@ -133,6 +133,16 @@
                     <th><label for="price">가격:</label></th>
                     <td><input type="number" id="price"><br></td>
                 </tr>
+                <tr>
+                    <th></th>
+                        <form action="/upload" method="post" enctype="multipart/form-data">
+                            <label for="images">이미지 선택:</label>
+                            <input type="file" id="images" name="images" accept="image/*" multiple>
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
             </tbody>
         </table>
 
@@ -154,9 +164,34 @@
 </body>
 
 <script>
+    document.getElementById('images').addEventListener('change', async function(event) {
+        const files = event.target.files;
+        const formData = new FormData();
+        
+        for (let i = 0; i < files.length; i++) {
+            formData.append('images', files[i]);
+        }
+    
+        try {
+            const response = await fetch('/upload', {
+                method: 'POST',
+                body: formData
+            });
+    
+            if (!response.ok) {
+                throw new Error('이미지 업로드 실패');
+            }
+    
+            const result = await response.json();
+            console.log('업로드 성공:', result);
+        } catch (error) {
+            console.error('에러 발생:', error);
+        }
+    });
+    
     document.querySelector('#carForm').addEventListener('submit', function(event) {
         event.preventDefault(); // 기본 폼 제출 방지
-
+    
         const data = {
             carModel: document.querySelector('#carModel').value,
             carType: document.querySelector('#carType').value,
@@ -166,10 +201,10 @@
             price: parseInt(document.querySelector('#price').value),
             comment: document.querySelector('#comment').value
         };
-
+    
         console.log('Form Data:', data); // 폼 데이터 확인
         console.log('JSON Data:', JSON.stringify(data)); // JSON 변환 확인
-
+    
         fetch('http://192.168.0.25:8080/carpost/post', {
             method: 'POST', // POST 요청으로 설정
             headers: {
@@ -192,6 +227,6 @@
             console.error('Fetch error:', error);
         });
     });
-</script>
+    </script>
 
 </html>
