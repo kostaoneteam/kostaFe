@@ -12,6 +12,17 @@
     <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"> -->
     <script src="https://kit.fontawesome.com/def66b134a.js" crossorigin="anonymous"></script>
     <title>Document</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+        }
+        .grid img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
 <div class="container">                                                                                                              
@@ -55,10 +66,10 @@
     <section>
         <div class="car-info-article">
             <div class="car-info-left">
-                <h2 id="brand-model">[브랜드]모델명</h2>
+                <h2 id="brand-model"><span id="carModel"></span></h2>
             </div>
             <div class="car-info-right">
-                <h2 id="car-price">판매가 nn만원</h2>
+                <h2 id="car-price"><span id="price"></span></h2>
             </div>
         </div>
 
@@ -68,23 +79,8 @@
                 <img id="main-image" src="./imges/1.jfif" alt="Main Image">
             </div>
             <div class="image-list">
-                <div class="grid">
-                    <img src="./imges/1.jfif " alt="Image 1" onclick="showImage(this)">
-                    <img src="./imges/2.jfif" alt="Image 2" onclick="showImage(this)">
-                    <img src="./imges/3.jfif" alt="Image 3" onclick="showImage(this)">
-                    <img src="./imges/4.jfif" alt="Image 4" onclick="showImage(this)">
-                    <img src="./imges/1.jfif " alt="Image 1" onclick="showImage(this)">
-                    <img src="./imges/2.jfif" alt="Image 2" onclick="showImage(this)">
-                    <img src="./imges/3.jfif" alt="Image 3" onclick="showImage(this)">
-                    <img src="./imges/4.jfif" alt="Image 4" onclick="showImage(this)">
-                    <img src="./imges/1.jfif " alt="Image 1" onclick="showImage(this)">
-                    <img src="./imges/2.jfif" alt="Image 2" onclick="showImage(this)">
-                    <img src="./imges/3.jfif" alt="Image 3" onclick="showImage(this)">
-                    <img src="./imges/4.jfif" alt="Image 4" onclick="showImage(this)">
-                    <img src="./imges/1.jfif " alt="Image 1" onclick="showImage(this)">
-                    <img src="./imges/2.jfif" alt="Image 2" onclick="showImage(this)">
-                    <img src="./imges/3.jfif" alt="Image 3" onclick="showImage(this)">
-                    <img src="./imges/4.jfif" alt="Image 4" onclick="showImage(this)">
+                <div class="grid" id="imageGrid">
+                    <!-- 이미지가 여기에 동적으로 추가됩니다. -->
                 </div>            
             </div>
         </div>
@@ -103,13 +99,13 @@
                     <tbody>
                         <tr>
                             <th>연    식</th>
-                            <td><span id="mileage">YYYY</span></td>
+                            <td><span id="mileage"></span></td>
                             <th>색    상</th>
-                            <td><span id="color">color</span></td>
+                            <td><span id="color"></span></td>
                         </tr>
                         <tr>
                             <th>배 기 량</th>
-                            <td><span id="displacement">nnnn</span></td>
+                            <td><span id="displacement"></span></td>
                             <th>상    태</th>
                             <td>민트급</td>
                         </tr>
@@ -127,11 +123,11 @@
                     <tr>
                         <th rowspan="3"><img src="./imges/seller.jpg" alt=""></th>
                         <th>이름</th>
-                        <td><span id="userId">이름 먀먀</span></td>
+                        <td><span id="userId"></span></td>
                     </tr>
                     <tr>
                         <th>전번</th>
-                        <td><span id="phoneNumber">nn진지한대화중nn</span></td>
+                        <td><span id="phoneNumber"></span></td>
                     </tr>
                 </table>
             </div>
@@ -141,10 +137,10 @@
 <!------------ SECTION END ------------>
 <!-- footer -->
 
-<footer class="footer">
+<!-- <footer class="footer">
     <p>푸터입니다</p>
  
-</footer>
+</footer> -->
 </div> <!-- container end -->
     <script>
         async function fetchData() {
@@ -170,6 +166,37 @@
 
         // 페이지 로드 시 데이터 가져오기
         window.onload = fetchData;
+
+        async function fetchImages() {
+            try {
+                const response = await fetch('YOUR_API_ENDPOINT_URL'); // API 엔드포인트 URL을 입력하세요.
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                const images = await response.json();
+
+                const imageGrid = document.getElementById('imageGrid');
+                images.forEach(image => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = image.url;
+                    imgElement.alt = image.alt || 'Image';
+                    imgElement.onclick = () => showImage(imgElement);
+                    imageGrid.appendChild(imgElement);
+                });
+
+                console.log('Fetched Images:', images); // 받아온 이미지 데이터 확인
+            } catch (error) {
+                console.error('Fetch error:', error);
+            }
+        }
+
+        function showImage(imgElement) {
+            // 이미지를 클릭했을 때의 동작을 정의합니다.
+            alert('이미지 클릭됨: ' + imgElement.src);
+        }
+
+        // 페이지 로드 시 이미지 가져오기
+        window.onload = fetchImages;
     </script>
 </body>
 </html>

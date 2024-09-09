@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Serif+KR:wght@200..900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400;700&family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap'); 
 
 /* 초기설정 */
 *{
@@ -9,12 +15,17 @@
     padding: 0px;
     color: #000;
     /* font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Noto Sans KR", sans-serif; */
-    
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    /* font-family: 'Nanum Pen Script', 'cursive'; */
 
 }
 /* 폰트설정 알아보기 */
 body{
-    font-family: 'Raleway', sans-serif;
+    /* 해더 사이드바 메인 빼고 모든 영역 백그라운드 */
+
+    background-color: #fffff0;
+    
+    
 }
 
 .container{
@@ -25,10 +36,15 @@ body{
 
 /* header  */
 .main-header {
-   
+    position:fixed;
     display: flex;
-    width: 100%;
+    width: 1280px;
     margin: auto;
+    top:0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 9999;
+
 }
 
 .header_intrio{
@@ -38,7 +54,8 @@ body{
    border-top: none;
    border-left: none;
    border-right: none;
-    background-color: #ffffff;
+   /* 해더부분 백그라운드 컬러 */
+    background-color: #fffff0;
     width: 100%;
     height: 150px;
     background-size: cover;
@@ -55,6 +72,10 @@ h1{
     color: blue;
     text-align: center;
     margin-top: 50px; 
+    /* font-family: 'Spoqa Han Sans Neo', 'sans-serif'; */
+    /* font-family: 'Nanum Pen Script', 'cursive'; */
+    
+    
 }
 .header-content{
     display: flex;
@@ -71,6 +92,7 @@ h1{
     display: flex; 
     justify-content: flex-start; /* 항목을 왼쪽에 정렬 */
     margin-left: 50px;
+   
     
 }
 .main-nav ul {
@@ -83,6 +105,7 @@ h1{
 
 .main-nav li {
     margin-right: 20px; /* 항목 간 간격 설정 */
+    font-weight: bold;
  
 }
 
@@ -162,6 +185,7 @@ h1{
         margin: auto;
         height: auto;
 }
+
 /* ================================================================================================== */
 
                                                                                 
