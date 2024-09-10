@@ -4,6 +4,7 @@
     margin: 0 auto;
     justify-content: center;
     align-items: center;
+    background-color: #fffffa;
 }
 
 .login-main{
@@ -21,7 +22,7 @@ h2 {
     width: 450px;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
+    border: 2px solid #3F73D2;
     display: flex;
     flex-direction: column;
     border-radius: 15px;
@@ -40,7 +41,7 @@ h2 {
     padding: 20px 16px;
     border-radius: 16px;
     background-color: orange(256, 256, 256, 0.05);
-    border: 1px solid orange;
+    border: 1px solid #3F73D2;
     color: black;
 }
 
@@ -59,7 +60,7 @@ h2 {
     padding: 20px 16px;
     border-radius: 16px;
     background-color: orange(256, 256, 256, 0.05);
-    border: 1px solid orange;
+    border: 1px solid #B2C8F2;
     color: black;
 }
 
@@ -75,7 +76,7 @@ button{
      color: black;
      font-size: 1.5m;
      border: none;
-     background-color: orange;
+     background-color: #B2C8F2;
      cursor: pointer;
      border-radius: 15px;
     

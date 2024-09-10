@@ -23,7 +23,7 @@
 body{
     /* 해더 사이드바 메인 빼고 모든 영역 백그라운드 */
 
-    background-color: #fffff0;
+    background-color: #fffffA;
     
     
 }
@@ -48,21 +48,26 @@ body{
 }
 
 .header_intrio{
-    /* background-image: url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA2MTZfODcg%2FMDAxNjg2ODcxMTM5MDQy.xIx_hhiin7ODKZ6MwF7rufGDWnjh4qu2pByNK-vMz8Ug.Rx-jnVhs8kd6Mtj7gOc3iZw4gy55khp9Sh001v1Zw30g.PNG.mo7933%2F18_%25C0%25DA%25B5%25BF%25C2%25F7_%25B0%25CB%25C1%25A4_%25C0%25DA%25BF%25AC_%25BE%25CF%25BC%25AE_%252836%2529.png&type=sc960_832); */
+    background-image: url(./MainLogo.png);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
    border: 1px solid #575756;
    /* border-radius: 15px; */
    border-top: none;
    border-left: none;
    border-right: none;
    /* 해더부분 백그라운드 컬러 */
-    background-color: #fffff0;
+    background-color: #fffffA;
     width: 100%;
     height: 150px;
-    background-size: cover;
-    background-position: center; /* 이미지를 가운데 정렬 */
+  
 }
 
 h1{
+
     display: flex;
     width: 100%;
     /* height: 100px; */
@@ -254,7 +259,7 @@ input[id*="car_select"] + label {
 
  /* aside 화살표 방향설정  */
 input[id*="car_select"] + label i {
-    font-size: 0.rem;
+    font-size: 0.9rem;
     float: right;
     transition: transform 0.5s ease-in-out;
 }
@@ -324,7 +329,7 @@ input[id*="car_select"]:checked + label + div {max-height: 300px;}
     font-style: bold;
 }
 .accordion .sidebar ul li:hover {
-    background-color: #9ad7ff;
+    background-color: #B2C8F2;
     cursor: pointer;
 }
 
@@ -401,7 +406,7 @@ section .car-icons:nth-child(4n){
     height: auto;
     background-color: rgba(255, 255, 255, 0.411);
 
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.6);
+    box-shadow: 6px 6px 6px rgba(63, 115, 210, 0.6);
     transition: all .35s;
     top: -10px;
     left: -10px;

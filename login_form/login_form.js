@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // console.log('-+++++-')
 
 
-      fetch('http://localhost:8080/user/login', {
+      fetch('http://192.168.0.25:8080/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             console.log('서버 응답:', data);
             alert('로그인 성공');
-            window.location.href = 'http://localhost:63342/kostaFe/frontfirst/frontfirst2.html';
+            // window.location.href = 'http://localhost:63342/kostaFe/frontfirst/frontfirst2.html';
 
           }else{
             console.log(data);

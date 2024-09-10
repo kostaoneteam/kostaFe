@@ -108,7 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
             fetch('http://localhost:8080/user/signup', {
                 method: 'POST',
                 body: formData,
-                console.log(formData)
             })
             
             
