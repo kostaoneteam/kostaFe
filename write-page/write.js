@@ -1,66 +1,100 @@
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('#carForm').addEventListener('submit', async function(event) {
-        event.preventDefault(); // 기본 폼 제출 방지
+// 데이터 로딩 함수
+const loadData = () => {
+    const baseURL = isFilterActive
+        ? `http://localhost:8080/carpost/filter?limit=${limit}&offset=${offset}`
+        : `http://localhost:8080/carpost/main?limit=${limit}&offset=${offset}`;
 
-        // 이미지 파일 처리
-        const imageInput = document.getElementById('images');
-        const files = imageInput.files;
-        const base64Images = [];
+    return fetch(baseURL)
+        .then(response => response.json())
+        .then(data => {
+            // 데이터를 페이지에 추가
+            data.forEach(car => {
+                const carDiv = document.createElement('div');
+                carDiv.className = 'car-icons';
 
-        // 모든 파일을 Base64로 인코딩
-        for (const file of files) {
-            const reader = new FileReader();
-            const base64Promise = new Promise((resolve, reject) => {
-                reader.onload = () => {
-                    let base64Image = reader.result;  // data:image/jpeg;base64,... 형식 포함
-                    resolve(base64Image);
-                };
-                reader.onerror = reject;
-                reader.readAsDataURL(file); // Base64로 변환
+                // 차량 이미지 추가
+                const carHolder = document.createElement('div');
+                carHolder.className = 'car-holder';
+                const img = document.createElement('img');
+                img.src = car.carImagesURL; // 차량 객체에 imageURL 속성이 있다고 가정
+                carHolder.appendChild(img);
+
+                // 차량 상세 정보 추가
+                const textDiv = document.createElement('div');
+                textDiv.className = 'text';
+                const carTitle = document.createElement('div');
+                carTitle.className = 'car1';
+                carTitle.textContent = car.title; // 차량 객체에 title 속성이 있다고 가정
+                textDiv.appendChild(carTitle);
+
+                // 차량 상세 정보 테이블 생성
+                const table = document.createElement('table');
+                table.className = 'car_table';
+                const tbody = document.createElement('tbody');
+
+                const details = [
+                    { label: '차 종 :', value: car.carType },
+                    { label: '연 식 :', value: car.carYear },
+                    { label: '가 격 :', value: car.price },
+                    { label: '총 km 수 :', value: car.mileage },
+                    { label: '배 기 량 :', value: car.displacement }
+                ];
+
+                details.forEach(detail => {
+                    const tr = document.createElement('tr');
+                    const tdLabel = document.createElement('td');
+                    tdLabel.textContent = detail.label;
+                    const tdValue = document.createElement('td');
+                    const spanValue = document.createElement('span');
+                    spanValue.textContent = detail.value;
+                    tdValue.appendChild(spanValue);
+                    tr.appendChild(tdLabel);
+                    tr.appendChild(tdValue);
+                    tbody.appendChild(tr);
+                });
+
+                table.appendChild(tbody);
+                textDiv.appendChild(table);
+
+                // 좋아요 아이콘 추가
+                const iconFooter = document.createElement('div');
+                iconFooter.className = 'icon-footer';
+                const sellerDiv = document.createElement('div');
+                sellerDiv.textContent = `판매자 : ${car.userId}`; // 차량 객체에 seller 속성이 있다고 가정
+                iconFooter.appendChild(sellerDiv);
+
+                const likeDiv = document.createElement('div');
+                likeDiv.className = 'like';
+                likeDiv.dataset.likeCount = car.likes; // 차량 객체에 likes 속성이 있다고 가정
+                likeDiv.innerHTML = `<i class="fa-solid fa-heart"></i> ${car.likes}`;
+                iconFooter.appendChild(likeDiv);
+
+                carDiv.appendChild(carHolder);
+                carDiv.appendChild(textDiv);
+                carDiv.appendChild(iconFooter);
+
+                section.appendChild(carDiv);
+
+                // 클릭 시 상세 페이지로 이동
+                carDiv.addEventListener('click', () => {
+                    fetch(`http://localhost:8080/carpost/details/${car.id}`)
+                        .then(response => response.json())
+                        .then(carDetails => {
+                            // 상세 정보를 로드한 후, 상세 페이지로 리다이렉트
+                            const detailURL = new URL('http://localhost:63342/kostaFe/detail-page/detail.html');
+                            detailURL.searchParams.set('id', car.id);
+                            window.location.href = detailURL.href;
+                        })
+                        .catch(error => {
+                            console.error('차량 상세 정보를 가져오는 중 오류 발생:', error);
+                        });
+                });
             });
-            base64Images.push(await base64Promise);
-        }
 
-        // LocalStorage에서 userId 가져오기
-        const userId = localStorage.getItem('userId');
-
-        // 폼 데이터 수집
-        const formData = {
-            carModel: document.querySelector('#carModel').value,
-            brand: document.querySelector('#brand').value,
-            carType: document.querySelector('#carType').value,
-            carYear: document.querySelector('#carYear').value,
-            price: parseInt(document.querySelector('#price').value, 10),
-            displacement: document.querySelector('#displacement').value,
-            color: document.querySelector('#color').value,
-            carImagesURL: base64Images, // Base64로 인코딩된 이미지 리스트 (data:image/jpeg;base64, 형식 포함)
-            userId: userId // userId 추가
-        };
-
-        console.log('폼 데이터:', formData);
-
-        try {
-            const response = await fetch('http://localhost:8080/carpost/post', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': '*/*'
-                },
-                body: JSON.stringify(formData)
-            });
-9
-
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-
-            const result = await response.json();
-            console.log('성공:', result);
-
-            // 리디렉트
-            window.location.href = 'http://localhost:63342/kostaFe/frontfirst/frontfirst2.html'; // 메인 페이지로 리다이렉트
-        } catch (error) {
-            console.error('Fetch error:', error);
-        }
-    });
-});
+            // 오프셋을 업데이트
+            offset += limit;
+        })
+        .catch(error => {
+            console.error('차량 데이터를 가져오는 중 오류 발생:', error);
+        });
+};
