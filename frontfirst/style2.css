@@ -199,7 +199,14 @@ h1{
     margin-top: 150px;
     position: sticky;
     /* overflow: ; */
+  transition: opacity 0.5s ease;
+  opacity: 1;
 }
+
+#main-section.loading {
+    opacity: 0;
+}
+
 /* aside */
 
 aside{
@@ -291,10 +298,15 @@ input[id*="car_select"]:checked + label + div {max-height: 300px;}
 /* input[id*="car_select"]:checked + label em {background-position: 0 -30px;} */
 
 
-/* 사이드바 세부내용 추후에 수정 */
-.sidebar{
+/* 드롭다운을 위한 CSS */
+.sidebar
+{
+    display: none;
+}
+input[type="checkbox"]:checked + label + .sidebar {
     display: block;
 }
+
 
 .brand, .carTypeld, .displacement, .color, .modelYear {
     width: 100%;

@@ -1,239 +1,247 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style2.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet"> -->
-    <script src="https://kit.fontawesome.com/def66b134a.js" crossorigin="anonymous"></script>
-    <script src="./mainPageLikeIcon.js"></script>
-    <script src="./aside_selectevent.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://kit.fontawesome.com/def66b134a.js" crossorigin="anonymous"></script>
+  <script src="./mainPageLikeIcon.js"></script>
+  <script src="./aside_selectevent.js"></script>
 
-    <script type="module" src="./auth.js" defer></script> <!-- auth.js를 먼저 로드 -->
-    <script type="module" src="./main.js" defer></script> <!-- main.js를 나중에 로드 -->
-    <script src="../login_form/logOut.js"></script>
-    <script type="module" src="./checkBox.js" defer></script>
+  <script type="module" src="./auth.js" defer></script> <!-- auth.js를 먼저 로드 -->
+  <script type="module" src="./main.js" defer></script>
+  <script type="module" src="../login_form/logOut.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          setupCheckboxEvents();
+      });
+  </script>
 
 
 
-
-
-    <title>Document</title>
+  <title>Document</title>
 </head>
 <body>
 <div class="container">
-<!-- header -->
-    <header class="main-header">
-        <div class="header_intrio">
-            <div class="header-title">
-                <h1 >&nbsp;</h1>
+  <!-- header -->
+  <header class="main-header">
+    <div class="header_intrio">
+      <div class="header-title">
+        <h1>&nbsp;</h1>
+      </div>
+      <div class="header-content">
+        <!-- nav -->
+        <nav class="main-nav">
+          <ul>
+            <li><a href="http://localhost:63342/kostaFe/signup_form/signup.html">회원가입</a></li>
+            <li><a href="http://localhost:63342/kostaFe/login_form/login_form.html">로그인</a></li>
+            <li><a href="http://localhost:63342/kostaFe/write-page/write.html">글 쓰기</a></li>
+            <li><a href="http://localhost:63342/kostaFe/written-like-list/list.html"
+                   id="myPostLink">내가 쓴 글</a></li>
+            <li><a href="http://localhost:63342/kostaFe/written-like-list/list.html"
+                   id="likesPostLink">좋아요 한 글</a></li>
+            <li><a href="#" id="logoutLink">로그 아웃</a></li>
+          </ul>
+        </nav>
+        <!-- search -->
+        <div class="search">
+          <form action="">
+            <!-- <input type="text" class="input-search" value="차 이름을 검색해주세요." id="input-search" onclick="clearTextarea()" >
+            <input type= "submit" class="input-search-submit" value="검색"> -->
+            <div class="search_container">
+              <input class="search_input" type="text" placeholder="Search">
             </div>
-            <div class="header-content">
-<!-- nav -->
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="http://localhost:63342/kostaFe/signup_form/signup.html">회원가입</a></li>
-                        <li><a href="http://localhost:63342/kostaFe/login_form/login_form.html">로그인</a></li>
-                        <li><a href="http://localhost:63342/kostaFe/write-page/write.html">글 쓰기</a></li>
-                        <li><a href="http://localhost:63342/kostaFe/written-like-list/list.html" id="myPostLink">내가 쓴 글</a></li>
-                        <li><a href="http://localhost:63342/kostaFe/written-like-list/list.html" id="likesPostLink">좋아요 한 글</a></li>
-                        <li><a href="#" id="logoutLink">로그 아웃</a></li>
-                    </ul>
-                </nav>
-<!-- search -->
-                <div class="search">
-                    <form action="">
-                        <!-- <input type="text" class="input-search" value="차 이름을 검색해주세요." id="input-search" onclick="clearTextarea()" >
-                        <input type= "submit" class="input-search-submit" value="검색"> -->
-                        <div class="search_container">
-                            <input class="search_input" type="text" placeholder="Search">
-                        </div>
-                    </form>
-                </div>
-            </div>
+          </form>
         </div>
-    </header>
-<div class="main-menu">
+      </div>
+    </div>
+  </header>
+  <div class="main-menu">
 
     <!-- aside -->
-<div class="aside_section">
-    <aside class="">
+    <div class="aside_section">
+      <aside class="">
         <div class="accordion">
-            <input type="checkbox" id="car_select01">
-            <label for="car_select01">제 조 사<i class="fa-solid fa-arrow-down"></i></label>
-            <!-- <label for="car_select01">제 조 사<img src="./arrow down.png"></img></label> -->
+          <input type="checkbox" id="car_select01">
+          <label for="car_select01">제 조 사<i class="fa-solid fa-arrow-down"></i></label>
+          <!-- <label for="car_select01">제 조 사<img src="./arrow down.png"></img></label> -->
 
-            <div class="sidebar"  >
-                <div class="brand" >
-                    <ul class="accordion_ul">
-                        <li >
-                            <input type="checkbox" for="selectevent01" class="input_selectevent" id="select_Br01" data-car-brand="현대">
-                            <label for="select_Br01" id="selectevent01" class="accordion_bar"><p>현대</p></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="" id="select_Br02" data-car-brand="기아">
-                            <label for="select_Br02" class="accordion_bar" ><p>기아</p></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="" id="select_Br03" data-car-brand="제네시스">
-                            <label for="select_Br03" class="accordion_bar" ><p>제네시스</p></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="" id="select_Br04" data-car-brand="쉐보레(GM대우)">
-                            <label for="select_Br04" class="accordion_bar" ><P>쉐보레(GM대우)</P></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="" id="select_Br05" data-car-brand="르노코리아(삼성)">
-                            <label for="select_Br05" class="accordion_bar" ><P>르노코리아(삼성)</P></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="" id="select_Br06" data-car-brand="KG모빌리티(쌍용)">
-                            <label for="select_Br06" class="accordion_bar" ><P>KG모빌리티(쌍용)</P></label>
-                        </li>
-                    </ul>
-                </div>
+          <div class="sidebar">
+            <div class="brand">
+              <ul class="accordion_ul">
+                <li>
+                  <input type="checkbox" for="selectevent01" class="input_selectevent"
+                         id="select_Br01" data-car-brand="현대">
+                  <label for="select_Br01" id="selectevent01" class="accordion_bar"><p>현대</p>
+                  </label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_Br02" data-car-brand="기아">
+                  <label for="select_Br02" class="accordion_bar"><p>기아</p></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_Br03" data-car-brand="제네시스">
+                  <label for="select_Br03" class="accordion_bar"><p>제네시스</p></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_Br04" data-car-brand="쉐보레(GM대우)">
+                  <label for="select_Br04" class="accordion_bar"><P>쉐보레(GM대우)</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_Br05" data-car-brand="르노코리아(삼성)">
+                  <label for="select_Br05" class="accordion_bar"><P>르노코리아(삼성)</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_Br06" data-car-brand="KG모빌리티(쌍용)">
+                  <label for="select_Br06" class="accordion_bar"><P>KG모빌리티(쌍용)</P></label>
+                </li>
+              </ul>
             </div>
+          </div>
 
-            <input type="checkbox" id="car_select02">
-            <label for="car_select02">차 량 종 류<i class="fa-solid fa-arrow-down"></i></label>
-            <div class="sidebar" >
-                <div class="carTypeld" >
-                    <ul class="accordion_ul">
-                        <li >
-                            <input type="checkbox" class="" id="select_CT01" data-car-Typeld="경차">
-                            <label for="select_CT01" class="accordion_bar" ><P>경차</P></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="" id="select_CT02" data-car-Typeld="소형차">
-                            <label for="select_CT02" class="accordion_bar" ><P>소형차</P></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="" id="select_CT03" data-car-Typeld="중형차">
-                            <label for="select_CT03" class="accordion_bar" ><P>중형차</P></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="" id="select_CT04" data-car-Typeld="대형차">
-                            <label for="select_CT04" class="accordion_bar" ><P>대형차</P></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="" id="select_CT05" data-car-Typeld="스포츠카">
-                            <label for="select_CT05" class="accordion_bar" ><P>스포츠카</P></label>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="" id="select_CT06" data-car-Typeld="SUV">
-                            <label for="select_CT06" class="accordion_bar" ><P>SUV</P></label>
-                        </li>
-                    </ul>
-                </div>
+          <input type="checkbox" id="car_select02">
+          <label for="car_select02">차 량 종 류<i class="fa-solid fa-arrow-down"></i></label>
+          <div class="sidebar">
+            <div class="carType">
+              <ul class="accordion_ul">
+                <li>
+                  <input type="checkbox" class="" id="select_CT01" data-car-Type="경차">
+                  <label for="select_CT01" class="accordion_bar"><P>경차</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_CT02" data-car-Type="소형차">
+                  <label for="select_CT02" class="accordion_bar"><P>소형차</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_CT03" data-car-Type="중형차">
+                  <label for="select_CT03" class="accordion_bar"><P>중형차</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_CT04" data-car-Type="대형차">
+                  <label for="select_CT04" class="accordion_bar"><P>대형차</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_CT05" data-car-Type="스포츠카">
+                  <label for="select_CT05" class="accordion_bar"><P>스포츠카</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_CT06" data-car-Type="SUV">
+                  <label for="select_CT06" class="accordion_bar"><P>SUV</P></label>
+                </li>
+              </ul>
             </div>
+          </div>
 
-            <input type="checkbox" id="car_select03">
-            <label for="car_select03">배 기 량<i class="fa-solid fa-arrow-down"></i></label>
-            <div class="sidebar" >
-                <div class="displacement" >
-                    <ul class="accordion_ul">
-                        <li >
-                            <input type="checkbox" class="" id="select_dp01" data-car-displacement="경차 1000cc 미만">
-                            <label for="select_dp01" class="accordion_bar" ><P>경차 1000cc 미만</P></label>
-                        </li>
-                        <li >
-                            <input type="checkbox" class="" id="select_dp02" data-car-displacement="소형차 1600cc 미만">
-                            <label for="select_dp02" class="accordion_bar" ><P>소형차 1600cc 미만</P></label>
-                        </li>
-                        <li >
-                            <input type="checkbox" class="" id="select_dp03" data-car-displacement="중형차 1600cc ~2000 미만">
-                            <label for="select_dp03" class="accordion_bar" ><P>중형차 1600cc ~2000 미만</P></label>
-                        </li>
-                        <li >
-                            <input type="checkbox" class="" id="select_dp04" data-car-displacement="대형 2000cc 이상">
-                            <label for="select_dp04" class="accordion_bar" ><P>대형 2000cc 이상</P></label>
-                        </li>
-                    </ul>
-                </div>
+          <input type="checkbox" id="car_select03">
+          <label for="car_select03">배 기 량<i class="fa-solid fa-arrow-down"></i></label>
+          <div class="sidebar">
+            <div class="displacement">
+              <ul class="accordion_ul">
+                <li>
+                  <input type="checkbox" class="" id="select_dp01"
+                         data-car-displacement="경차 1000cc 미만">
+                  <label for="select_dp01" class="accordion_bar"><P>경차 1000cc 미만</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_dp02"
+                         data-car-displacement="소형차 1600cc 미만">
+                  <label for="select_dp02" class="accordion_bar"><P>소형차 1600cc 미만</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_dp03"
+                         data-car-displacement="중형차 1600cc ~2000 미만">
+                  <label for="select_dp03" class="accordion_bar"><P>중형차 1600cc ~2000 미만</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_dp04"
+                         data-car-displacement="대형 2000cc 이상">
+                  <label for="select_dp04" class="accordion_bar"><P>대형 2000cc 이상</P></label>
+                </li>
+              </ul>
             </div>
+          </div>
 
-            <input type="checkbox" id="car_select04">
-            <label for="car_select04">색 상<i class="fa-solid fa-arrow-down"></i></label>
-            <div class="sidebar" >
-                <div class="color" >
-                    <ul class="accordion_ul">
-                        <li >
-                            <input type="checkbox" class="" id="select_cl01" data-car-color="흰색">
-                            <label for="select_cl01" class="accordion_bar" ><P>흰색</P> </label>
-                        </li>
-                        <li >
-                            <input type="checkbox" class="" id="select_cl02" data-car-color="검정색">
-                            <label for="select_cl02" class="accordion_bar" ><P>검정색</P> </label>
-                        </li>
-                        <li >
-                            <input type="checkbox" class="" id="select_cl03" data-car-color="쥐색">
-                            <label for="select_cl03" class="accordion_bar" > <P>쥐색</P></label>
-                        </li>
-                        <li >
-                            <input type="checkbox" class="" id="select_cl04" data-car-color="은색">
-                            <label for="select_cl04" class="accordion_bar" > <P>은색</P></label>
-                        </li>
-                        <li >
-                            <input type="checkbox" class="" id="select_cl05" data-car-color="청색">
-                            <label for="select_cl05" class="accordion_bar" > <P>청색</P></label>
-                        </li>
-                    </ul>
-                </div>
+          <input type="checkbox" id="car_select04">
+          <label for="car_select04">색 상<i class="fa-solid fa-arrow-down"></i></label>
+          <div class="sidebar">
+            <div class="color">
+              <ul class="accordion_ul">
+                <li>
+                  <input type="checkbox" class="" id="select_cl01" data-car-color="흰색">
+                  <label for="select_cl01" class="accordion_bar"><P>흰색</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_cl02" data-car-color="검정색">
+                  <label for="select_cl02" class="accordion_bar"><P>검정색</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_cl03" data-car-color="쥐색">
+                  <label for="select_cl03" class="accordion_bar"><P>쥐색</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_cl04" data-car-color="은색">
+                  <label for="select_cl04" class="accordion_bar"><P>은색</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_cl05" data-car-color="청색">
+                  <label for="select_cl05" class="accordion_bar"><P>청색</P></label>
+                </li>
+              </ul>
             </div>
+          </div>
 
-            <input type="checkbox" id="car_select05">
-            <label for="car_select05">차 량 연 식<i class="fa-solid fa-arrow-down"></i></label>
-            <div class="sidebar" >
-                <div class="carYear" >
-                    <ul class="accordion_ul">
-                        <li >
-                            <input type="checkbox" class="" id="select_my01" data-car-Year="2000년~2005년">
-                            <label for="select_my01" class="accordion_bar" ><P>2000년~2005년</P></label>
-                        </li>
-                        <li >
-                            <input type="checkbox" class="" id="select_my02" data-car-Year="2005년~2010년">
-                            <label for="select_my02" class="accordion_bar" ><P>2005년~2010년</P></label>
-                        </li>
-                        <li >
-                            <input type="checkbox" class="" id="select_my03" data-car-Year="2011년~2015년">
-                            <label for="select_my03" class="accordion_bar" ><P>2011년~2015년</P></label>
-                        </li>
-                        <li >
-                            <input type="checkbox" class="" id="select_my04" data-car-Year="2016년~2020년">
-                            <label for="select_my04" class="accordion_bar" ><P>2016년~2020년</P></label>
-                        </li>
-                        <li >
-                            <input type="checkbox" class="" id="select_my05" data-car-Year="2021년">
-                            <label for="select_my05" class="accordion_bar" ><P>2021년</P></label>
-                        </li>
-                        <li >
-                            <input type="checkbox" class="" id="select_my06" data-car-Year="2022년">
-                            <label for="select_my06" class="accordion_bar" ><P>2022년</P></label>
-                        </li>
-                        <li >
-                            <input type="checkbox" class="" id="select_my07" data-car-Year="2023년">
-                            <label for="select_my07" class="accordion_bar" ><P>2023년</P></label>
-                        </li>
-                        <li >
-                            <input type="checkbox" class="" id="select_my08" data-car-Year="2024년">
-                            <label for="select_my08" class="accordion_bar" ><P>2024년</P></label>
-                        </li>
-                    </ul>
-                </div>
+          <input type="checkbox" id="car_select05">
+          <label for="car_select05">차 량 연 식<i class="fa-solid fa-arrow-down"></i></label>
+          <div class="sidebar">
+            <div class="carYear">
+              <ul class="accordion_ul">
+                <li>
+                  <input type="checkbox" class="" id="select_my01" data-car-Year="2000년~2005년">
+                  <label for="select_my01" class="accordion_bar"><P>2000년~2005년</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_my02" data-car-Year="2005년~2010년">
+                  <label for="select_my02" class="accordion_bar"><P>2005년~2010년</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_my03" data-car-Year="2011년~2015년">
+                  <label for="select_my03" class="accordion_bar"><P>2011년~2015년</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_my04" data-car-Year="2016년~2020년">
+                  <label for="select_my04" class="accordion_bar"><P>2016년~2020년</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_my05" data-car-Year="2021년">
+                  <label for="select_my05" class="accordion_bar"><P>2021년</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_my06" data-car-Year="2022년">
+                  <label for="select_my06" class="accordion_bar"><P>2022년</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_my07" data-car-Year="2023년">
+                  <label for="select_my07" class="accordion_bar"><P>2023년</P></label>
+                </li>
+                <li>
+                  <input type="checkbox" class="" id="select_my08" data-car-Year="2024년">
+                  <label for="select_my08" class="accordion_bar"><P>2024년</P></label>
+                </li>
+              </ul>
             </div>
+          </div>
 
 
         </div>
 
-    </aside>
+      </aside>
 
-    <!-- section -->
+      <!-- section -->
 
-    <section id="main-section">
+      <section id="main-section">
         <!-- <div class="car-icons">
             <div class="car-holder">
                 <img src="https://img.kbchachacha.com/IMG/carimg/l/img09/img2619/26199561_16138622151605264.jpg?width=720">
@@ -274,16 +282,16 @@
 
             </div>
         </div> -->
-    
-    </section>
-</div>
-</div>
-<!-- footer -->
 
-<!-- <footer class="footer">
-    <p>푸터입니다</p>
+      </section>
+    </div>
+  </div>
+  <!-- footer -->
 
-</footer> -->
+  <!-- <footer class="footer">
+      <p>푸터입니다</p>
+
+  </footer> -->
 </div>
 </body>
 </html>
